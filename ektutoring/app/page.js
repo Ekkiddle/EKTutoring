@@ -1,6 +1,7 @@
 import Header from "./components/Header";
 import Navbar from "./components/Navbar";
 import Subjects from "./components/Subjects";
+import Footer from "./components/Footer";
 import Link from "next/link";
 
 export default function Home() {
@@ -39,6 +40,7 @@ export default function Home() {
           <Subjects />
         </div>
       </div>
+      <Footer />
     </main>
   );
 }
