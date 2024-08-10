@@ -3,6 +3,7 @@
 import Link from "next/link";
 import NavItem from "./NavItem";
 import { usePathname } from 'next/navigation';
+import { useEffect } from "react";
 
 const MENU_LIST = [
   { text: "Home", href: "/" },
@@ -12,19 +13,27 @@ const MENU_LIST = [
 ];
 const Navbar = () => {
     const pathName = usePathname();
-    window.onscroll = function(){
-        if(window.scrollY<200){
-            document.getElementById("header").classList.add("bg-transparent")
-            document.getElementById("header").classList.remove("bg-indigo-transparent")
-        }
-        else{
-            document.getElementById("header").classList.add("bg-indigo-transparent")
-            document.getElementById("header").classList.remove("bg-transparent")
-        }
-    }
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY < 200) {
+                document.getElementById("header").classList.add("bg-transparent");
+                document.getElementById("header").classList.remove("bg-indigo-transparent");
+            } else {
+                document.getElementById("header").classList.add("bg-indigo-transparent");
+                document.getElementById("header").classList.remove("bg-transparent");
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        // Clean up the event listener on component unmount
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
   return (
-    <header id="header" className="transition-colors duration-300 flex items-center bg-transparent w-full h-12 fixed z-50">
-      <nav className="flex flex-row items-center justify-between stretch w-full h-full">
+    <header id="header" className="w-screen transition-colors duration-300 flex items-center bg-transparent w-full h-12 top-0 mb-[-48px] sticky z-50">
+      <nav className="flex flex-row items-center justify-between stretch w-screen h-full">
         <Link href={"/"}>
             <h1 className="mx-10">EKTutoring</h1>
         </Link>
