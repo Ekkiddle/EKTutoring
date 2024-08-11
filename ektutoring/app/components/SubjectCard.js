@@ -13,7 +13,7 @@ export default function SubjectCard({image, imageAlt, title, text, nav}) {
                     className="shadow-xl"
                 />
             </div>
-            <h1 className="text-xl text-indigo-900 text-bold text-left w-full">{title}</h1>
+            <h1 className="text-xl text-indigo-900 font-bold text-left w-full">{title}</h1>
             <p className="text-xs text-left">{text}</p>
             <Link href={nav} 
             className="w-full mx-4 mt-auto px-6 py-3 text-white bg-indigo-500 rounded hover:bg-indigo-600 hover:text-lg transition-all 

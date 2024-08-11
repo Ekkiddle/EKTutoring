@@ -48,7 +48,7 @@ export default function Subjects() {
     return (
         <div className="bg-indigo-900">
             <TextRevealClient delay={0}>
-                <h1 className="inline-block text-6xl text-white bg-indigo-900 w-full px-14 pt-12 text-bold" >Subjects</h1>
+                <h1 className="inline-block text-6xl text-white bg-indigo-900 w-full px-14 pt-12 font-bold" >Subjects</h1>
                 <h2 className="italic text-lg text-white px-14 py-3">Explore a range of subjects with expert guidance tailored to your learning style and goals.</h2>
             </TextRevealClient>
             <div className="w-full flex flex-row items-center justify-between py-5">
